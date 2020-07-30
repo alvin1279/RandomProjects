@@ -23,7 +23,7 @@ def animate(i):
     x.append(xvalue)
     y.append(yvalue)
     line.set_data(x,y)
-    return line,                # To do blitting return needs to be giver, i dont know why though
+    return line,                # To do blitting return needs to be given, i dont know why though
 
 
 ani = FuncAnimation(fig, animate, interval=10, blit=True, frames=500)
