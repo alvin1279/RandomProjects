@@ -26,5 +26,6 @@ def animate(i):
     return line,                # To do blitting return needs to be giver, i dont know why though
 
 
-ani = FuncAnimation(fig, animate, interval=10, blit=True)
+ani = FuncAnimation(fig, animate, interval=10, blit=True, frames=500)
+ax.axis('off')
 plt.show()
