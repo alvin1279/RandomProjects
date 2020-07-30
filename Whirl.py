@@ -11,7 +11,7 @@ ax.set_autoscale_on(False)
 
 # whirl Initialisation
 x,y = [],[]
-line,= ax.plot([],[])           # This returns a plot line inside a list hence unpacink
+line,= ax.plot([],[])           # This returns a plot line inside a list hence unpacking
 print(line)
 def animate(i):
     t = 0.1*i
