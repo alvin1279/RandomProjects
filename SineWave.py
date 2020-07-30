@@ -21,7 +21,7 @@ def animate(_):
     ax.set(xlim=(0, 10), ylim=(-1, 1))
     ax.scatter(t, np.sin(2 * np.pi * (t * freq)))
 
-    if t >= 10:                  # Resetting when it crosses plot border
+    if t >= 10:                  # Resetting when point crosses plot x-border
         time = count(0)
 
 
