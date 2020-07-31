@@ -1,5 +1,4 @@
 import numpy as np
-from itertools import count
 import matplotlib.pyplot as plt
 
 # Plot Initialisation
