@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Plot Initialisation
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
+fig, (ax1, ax2, ax3) = plt.subplots(3, 1,sharex=True)
 
 # Modulating signal
 bin_data = '101011010'
