@@ -2,19 +2,33 @@ import numpy as np
 from itertools import count
 import matplotlib.pyplot as plt
 
-bin_data = '10011'
+# Plot Initialisation
+fig, (ax1,ax2,ax3) = plt.subplots(3,1,sharex=True)
+
 # Modulating signal
-mod_freq = 1
-mod_signal=np.array([])
+bin_data = '101011010'
+sign_length = 1000                  # no. of points the each bits occupy
+signal = np.array([])
 for bit in bin_data:
-    mod_signal = np.append(mod_signal,np.arange(0,mod_freq))
+    temp = np.full(sign_length,int(bit))
+    signal = np.append(signal,temp)
 
-# setting time axis
-time = np.arange(0, len(bin_data)*mod_freq, 0.001)
+# Time axis generation , Used to make the carrier wave
+total_points = len(signal)              # Total no.of points to be in the graph. Depends on length of binary data
+step_size = .01
+length = total_points*step_size
+time = np.arange(0, length,step_size)
 
-# setting carrie wave
+# Carrier signal
 amp = 10
-carr_freq = 10
-car_wave = np.sin(2 * np.pi * time * carr_freq)
+car_time = 100*step_size                # to make carrier time period a factor of step size
+car_signal = np.sin(2*np.pi*(time/car_time))
 
+# Modulated signal
+mod_sign = signal*car_signal
+
+ax1.plot(time,signal)
+ax2.plot(time,car_signal)
+ax3.plot(time,mod_sign)
+plt.show()
 
