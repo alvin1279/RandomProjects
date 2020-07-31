@@ -6,7 +6,7 @@ fig, (ax1,ax2,ax3) = plt.subplots(3,1,sharex=True)
 
 # Modulating signal
 bin_data = '101011010'
-sign_length = 1000                  # no. of points the each bits occupy
+sign_length = 1000                  # no. of points each bits occupy
 signal = np.array([])
 for bit in bin_data:
     temp = np.full(sign_length,int(bit))
