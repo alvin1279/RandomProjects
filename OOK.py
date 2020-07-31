@@ -13,15 +13,15 @@ for bit in bin_data:
     signal = np.append(signal,temp)
 
 # Time axis generation , Used to make the carrier wave
-total_points = len(signal)              # Total no.of points to be in the graph. Depends on length of binary data
+total_points = len(signal)          # Total no.of points to be in the graph. Depends on length of binary data
 step_size = .01
 length = total_points*step_size
 time = np.arange(0, length,step_size)
 
 # Carrier signal
 amp = 10
-car_time = 100*step_size                # to make carrier time period a factor of step size
-car_signal = np.sin(2*np.pi*(time/car_time))
+car_time = 100*step_size            # to make carrier time period a factor of step size
+car_signal = amp*np.sin(2*np.pi*(time/car_time))
 
 # Modulated signal
 mod_sign = signal*car_signal
