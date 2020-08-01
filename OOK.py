@@ -5,13 +5,10 @@ import matplotlib.pyplot as plt
 fig, (ax1, ax2, ax3) = plt.subplots(3, 1,sharex=True)
 
 # Modulating signal
-bin_data = '101011010'
-sign_length = 1000  # no. of points each bits occupy
-signal = np.array([])
-for bit in bin_data:
-    temp = np.full(sign_length, int(bit))
-    signal = np.append(signal, temp)
-
+bin_str = '101011010'
+bin_data =np.array([int(x) for x in bin_str])[:, np.newaxis]
+sign_length = np.ones(1000,dtype=int)[np.newaxis,:]  # no. of points each bits occupy
+signal = (bin_data*sign_length).ravel()
 # Time axis generation , Used to make the carrier wave
 total_points = len(signal)  # Total no.of points to be in the graph. Depends on length of binary data
 step_size = .01
