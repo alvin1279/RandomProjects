@@ -1,7 +1,7 @@
 # Ball attached to a string revolve around an anchor point
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn')
 from matplotlib.animation import FuncAnimation
 
 class Ball:
