@@ -81,6 +81,8 @@ def animate(_):
     return a, b, c, d
 
 
-ani = FuncAnimation(fig, animate, interval=10, blit=True)
+anim = FuncAnimation(fig, animate, interval=10, blit=True)
 
+# #saving
+# anim.save('Balls.gif',fps=30)
 plt.show()
