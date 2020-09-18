@@ -40,7 +40,7 @@ class Ball:
     def trace(self, trace):
 
         if trace:
-            trace_step = int(500 / self.r)
+            trace_step = int(1000 / self.r) * self.resol
             trace_points = self.Point[0][::trace_step], self.Point[1][::trace_step]
             ax.scatter(trace_points[0] * self.r, trace_points[1] * self.r, s=1)
 
