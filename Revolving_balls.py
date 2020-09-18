@@ -1,6 +1,7 @@
 # Ball objects revolve around a fixed point
 import numpy as np
 import matplotlib.pyplot as plt
+import secrets
 
 plt.style.use('seaborn-whitegrid')
 from matplotlib.animation import FuncAnimation
@@ -25,8 +26,9 @@ class Ball:
         self.r = radius
         self.speed = speed
         self.cl = cl
+        self.color = '#' + secrets.token_hex(3)
         
-        self.scat = ax.scatter([], [], c='r', s=100, zorder=2)     
+        self.scat = ax.scatter([], [], c=self.color, s=100, zorder=2)     
         self.resol = int(self.r/4)
         self.calc_points(self.resol)
         self.rev_points()
@@ -42,7 +44,7 @@ class Ball:
         if trace:
             trace_step = int(1000 / self.r) * self.resol
             trace_points = self.Point[0][::trace_step], self.Point[1][::trace_step]
-            ax.scatter(trace_points[0] * self.r, trace_points[1] * self.r, s=1)
+            ax.scatter(trace_points[0] * self.r, trace_points[1] * self.r, s=1, c=self.color)
 
     def plot(self):
 
@@ -89,5 +91,5 @@ def animate(_):
 anim = FuncAnimation(fig, animate, interval=10, blit=True)
 
 # #saving
-# anim.save('Balls.gif',fps=30)
+anim.save('Balls.gif',fps=30)
 plt.show()
