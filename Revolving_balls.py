@@ -57,7 +57,13 @@ class Ball:
     def rev_points(self):
         rev_step = int(100 * self.speed / self.r)
         self.rev_point = cycle(Ball.Point[0][::rev_step]), cycle(Ball.Point[1][::rev_step])
-
+        
+    def calcpoints(resol=1)
+        step = 0.1
+        theta = np.arange(0, 360, step/resol)
+        sin = np.sin((theta / 180) * np.pi)
+        cos = np.cos((theta / 180) * np.pi)
+        self.Points = [cos, sin]
 
 # Plot Initialisation,write this as an class function
 rmax = 20
